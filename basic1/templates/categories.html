@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="meta-link-cont">
+    <h1>Categories</h1>
+    {% for category, article in categories %}
+    <div class="meta-link">
+        <h3 class="share-tech-font"><a href="/{{category.url}}">{{ category }}</a></h3>
+    </div>
+    {% else %}
+    No posts yet!
+    {% endfor %}
+</div>
+{% endblock %}

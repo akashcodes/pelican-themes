@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141222909-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141222909-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="{{ SITEURL }}/theme/css/base.css" />
+
+    <!-- Highlight js -->
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- font-family: 'VT323' -->
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Share Tech Mono' -->
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Space Mono' -->
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Pacifico' -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Quicksand' -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
+
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <div class="nav-control-cont desktop">
+                <a class="nav-buttons nav-controls" href="/">akash.codes</a>
+                |
+                <a class="nav-buttons nav-controls" id="blog" href="/blog">Blog</a>
+                ▶
+                <div class="nav-controls meta-button category-button">
+                        <a class="nav-buttons nav-controls category-button" href="/categories">Categories</a>
+                        <div class="meta-cont categories-cont">
+                            {% for category in categories %}
+                                <a class="meta-link" href="/{{category[0].url}}">{{ category[0] }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    ,
+                    <div class="nav-controls meta-button">
+                        <a class="nav-buttons nav-controls" href="/tags">Tags</a>
+                        <div class="meta-cont tags-cont">
+                            {% for tag in tags %}
+                            <a class="meta-link" href="/{{tag[0].url}}">{{ tag[0] }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    &
+                    <a class="nav-buttons nav-controls" href="/archives">Archives</a>
+            </div>
+
+            <div class="nav-control-cont mobile">
+                <a class="nav-buttons nav-controls" href="/">akash.codes</a>
+                <br/><br/>
+                <a class="nav-buttons nav-controls" id="blog" href="/blog">Blog</a>
+                ▶
+                <a class="nav-buttons nav-controls category-button" href="/categories">Categories</a>
+                ,
+                <a class="nav-buttons nav-controls" href="/tags">Tags</a>
+                &
+                <a class="nav-buttons nav-controls" href="/archives">Archives</a>
+                
+            </div>
+
+
+            {% block header %} {% endblock %}
+        </div>
+        <div class="body">
+            {% block content %}{% endblock %}
+            <br/><br/><br/><br/><br/><br/>
+        </div>
+        <div class="footer">
+            <p class="powered-text">Using my own custom theme. Powered by Pelican, which takes great advantage of Python.</p>
+        </div>
+    </div>
+    <script id="dsq-count-scr" src="//akashcodes.disqus.com/count.js" async></script>
+</body>
+</html>

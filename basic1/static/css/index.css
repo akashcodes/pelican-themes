@@ -1,0 +1,52 @@
+
+
+@media only screen and (min-width: 800px) {
+    .title-text {
+        text-align: center;
+    }
+    
+    .name-text {
+        font-size: 3em;
+        font-weight: bold;
+        font-family: 'Share Tech Mono', monospace;
+    }
+    
+    .one-liner-text {
+        font-size: 1.5em;
+        font-family: 'Quicksand', monospace;
+    }
+    
+    .para-text {
+        width: 50%;
+        margin-left: 25%;
+        text-align: justify;
+    }
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width:799px) {
+
+    .title-text {
+        text-align: center;
+    }
+    
+    .name-text {
+        font-size: 3em;
+        font-weight: bold;
+        font-family: 'Share Tech Mono', monospace;
+    }
+    
+    .one-liner-text {
+        font-size: 1.5em;
+        font-family: 'Quicksand', monospace;
+    }
+    
+    .para-text {
+        width: 90%;
+        margin-left: 5%;
+        text-align: justify;
+    }
+
+}
+

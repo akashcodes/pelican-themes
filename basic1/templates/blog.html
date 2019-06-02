@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }}{% endblock %}
+
+{% block header %}
+<link type="text/css" rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css" />
+{% endblock %}
+
+{% block content %}
+<div class="article-link-cont">
+    {% for article in articles %}
+        <div class="article-cont">
+            <h3 class="share-tech-font"><a class="article-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+            <label class="article-date">Posted on <strong>{{ article.date|strftime('%d %B %Y') }}</strong></label> <span class="bar">|&nbsp;</span>
+            <a class="comment-count" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>
+            <div class="article-summary">
+                {{ article.summary }}
+            </div>
+        </div>
+    {% else %}
+    No posts yet!
+    {% endfor %}
+</div>
+{% endblock %}

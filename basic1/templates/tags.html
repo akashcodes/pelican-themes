@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="meta-link-cont">
+    <h1>Tags</h1>
+    {% for tag, article in tags %}
+    <div class="meta-link">
+        <h3 class="share-tech-font"><a href="/{{tag.url}}">{{ tag }}</a></h3>
+    </div>
+    {% else %}
+    No posts yet!
+    {% endfor %}
+</div>
+{% endblock %}
