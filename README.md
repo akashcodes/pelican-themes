@@ -11,7 +11,7 @@ Assuming you have a working website and you want to switch from the default them
 To use a theme with Pelican, first copy the theme folder (eg - __basic1__) to __Pelican_Project_Root/themes/__. You can also download one of the many themes from the [official repository](https://github.com/getpelican/pelican-themes). You can also learn how to create your own theme [here](http://docs.getpelican.com/en/3.6.3/themes.html)
 &nbsp;
 
-Now spicify which theme to use into your `pelicanconf.py`.
+Now specify which theme to use in your `pelicanconf.py`.
 
 <pre><code># To use basic1 theme
 # Path to theme to be used
